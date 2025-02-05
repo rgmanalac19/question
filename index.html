@@ -35,6 +35,11 @@
             color: #ffffff;
             text-shadow: 2px 2px 4px #00000050;
         }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         button {
             padding: 15px 30px;
             font-size: 18px;
@@ -56,7 +61,6 @@
         #noBtn {
             background-color: #f44336;
             color: white;
-            position: absolute;
         }
         #noBtn:hover {
             background-color: #ff7961;
@@ -66,9 +70,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will you be my Valentine? You can try to say no, but I'm sure you can't ❤️</h1>
-        <button id="yesBtn" onclick="goToAnotherPage()">Yes</button>
-        <button id="noBtn" onmouseover="moveButton()">No</button>
+        <h1>Will you be my Valentine? You can try to say no, but I'm sure you can't. ❤️</h1>
+        <div class="button-container">
+            <button id="yesBtn" onclick="goToAnotherPage()">Yes</button>
+            <button id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
     </div>
 
     <script>
@@ -80,6 +86,7 @@
             const randomX = Math.floor(Math.random() * maxX);
             const randomY = Math.floor(Math.random() * maxY);
 
+            button.style.position = 'absolute';
             button.style.left = `${randomX}px`;
             button.style.top = `${randomY}px`;
         }
